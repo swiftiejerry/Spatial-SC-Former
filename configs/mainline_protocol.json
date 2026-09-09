@@ -1,0 +1,106 @@
+{
+  "protocol": {
+    "name": "sister_blueprint_mainline_v1",
+    "line": "sister_blueprint_mainline",
+    "dataset": "data/raw/human_lymph_node_A1/adata_RNA.h5ad",
+    "label_key": "final_annot",
+    "seeds": [0, 1, 42],
+    "one_primary_factor_per_stage": true
+  },
+  "stage0": {
+    "purpose": "reproduce_current_public_code_baseline",
+    "status": "completed_reference",
+    "paper_fidelity_switches": false
+  },
+  "stage1": {
+    "name": "spot_spot_spatial_relation",
+    "arms": ["A", "B"],
+    "only_difference": "spatial_relation",
+    "gene_selection": "upstream_sampled",
+    "kl_target": "counts",
+    "gene_input": "counts",
+    "pseudo_labels": "fixed_upstream_leiden",
+    "loss": "upstream_loss_unchanged",
+    "spatial_relation": {
+      "A": false,
+      "B": true,
+      "method": "knn",
+      "k": 10,
+      "weighted": false,
+      "enters_hgt_as_relation": true,
+      "extra_spatial_loss": false
+    },
+    "batching": {
+      "sampler": "spatial_median_bisection_with_one_hop_halo",
+      "cell_size": 30,
+      "matched_between_A_and_B": true,
+      "coordinate_use": "matched_sampler_only",
+      "halo_in_clustering_loss": false
+    }
+  },
+  "stage2": {
+    "name": "prototype_dynamic_clustering",
+    "arm": "C",
+    "spatial_relation": false,
+    "gene_selection": "upstream_sampled",
+    "kl_target": "counts",
+    "gene_input": "counts",
+    "warmup": {
+      "epochs": 30,
+      "loss": "L_KL_only"
+    },
+    "initialization": {
+      "source": "warmup_embedding_H_spot",
+      "leiden": true,
+      "resolution": 0.5,
+      "neighbors": 10,
+      "K": "learned_from_warmup_leiden",
+      "free_k0": true
+    },
+    "prototype": {
+      "K_fixed_after_initialization": true,
+      "cosine_centering": false,
+      "delta_mode": "absolute",
+      "delta": 0.8,
+      "temperature": 0.005,
+      "temperature_source": "existing_warmup_calibration_report",
+      "confidence_rule": "q_greater_than_delta",
+      "preserve_empty_cluster_slots": true
+    },
+    "loss_after_warmup": {
+      "formula": "L_KL + lambda_proto * L_proto",
+      "lambda_proto": 1.0,
+      "replaces_fixed_clustering_loss": true,
+      "replaces_intra_cluster_term": true
+    },
+    "refresh": {
+      "interval_epochs": 10,
+      "update_assignment_and_prototype": true,
+      "variable_k_split_merge": false
+    }
+  },
+  "stage3": {
+    "name": "spatial_plus_dynamic",
+    "status": "blocked_until_stage1_and_stage2_protocols_are_accepted",
+    "arm": "D",
+    "only_new_difference_from_stage2": "spatial_relation"
+  },
+  "stage4": {
+    "name": "A_B_C_D_multiseed_ablation",
+    "status": "blocked_until_stage1_and_stage2_gates_are_recorded"
+  },
+  "commands": {
+    "stage1": "python scripts/运行Stage1实验.py --arm {A|B} --seed {0|1|42} --spatial-k 10 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/师姐蓝图主线_v1.json --tag sister_blueprint_v1",
+    "stage2": "python scripts/运行Stage23实验.py --arm C --seed {0|1|42} --warmup-epochs 30 --update-interval 10 --tau 0.005 --delta 0.8 --delta-mode absolute --no-center-embedding --init-source warmup_leiden --free-k0 --leiden-resolution 0.5 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/师姐蓝图主线_v1.json --tag sister_blueprint_v1"
+  },
+  "excluded_from_this_protocol": [
+    "paper_topz",
+    "paper_x",
+    "paper_z_gene_input",
+    "batch_size_300",
+    "inference_eval_diagnostic",
+    "gene_gene_relation",
+    "variable_k_split_merge",
+    "extra_L_spatial"
+  ]
+}

@@ -1,0 +1,14 @@
+cluster,n_cells,pct,top_truth,top_n,purity,n_truth_types
+2,2324,66.7,medulla cords,1027,0.442,10
+11,459,13.17,pericapsular adipose tissue,214,0.466,8
+10,261,7.49,medulla sinuses,142,0.544,8
+7,154,4.42,medulla sinuses,103,0.669,7
+3,84,2.41,capsule,36,0.429,9
+9,73,2.1,pericapsular adipose tissue,25,0.342,9
+0,70,2.01,medulla sinuses,33,0.471,6
+1,22,0.63,medulla sinuses,9,0.409,5
+5,19,0.55,medulla sinuses,16,0.842,2
+6,7,0.2,medulla sinuses,4,0.571,3
+8,6,0.17,medulla sinuses,4,0.667,3
+4,3,0.09,medulla sinuses,2,0.667,2
+12,2,0.06,medulla cords,1,0.5,2

@@ -1,0 +1,53 @@
+# Baseline: human_lymph_node A1 RNA, 原始 scFormer, 不用空间坐标
+# 对应实验矩阵 A（experiments/EXP_LOGBOOK.md）
+# 所有参数集中在这里，代码里不许写死
+
+run:
+  experiment: A            # A/B/C/D
+  seed: 42
+  device: cuda
+
+data:
+  # human_lymph_node A1 adata_RNA.h5ad 放到 data/raw/（来源见 data/raw/README.md）
+  h5ad: data/raw/A1/adata_RNA.h5ad
+  use_spatial: false       # Stage 0 baseline: 不使用空间坐标
+
+graph:
+  topz:
+    k: 20                  # 每 spot 保留 Z-score 最高的 K 个基因（论文主分析 K=20）
+  spatial:                 # Stage 1 才启用
+    enabled: false
+    mode: knn              # knn | radius
+    k: 6
+    radius: null
+    weighted: false        # 第一版无权重
+    refinement: false      # 有效的开（molecular-gated）
+
+model:
+  # 对齐 upstream 默认（从 third_party/scFormer Tutorial 里确认后填）
+  hidden_dim: null
+  num_heads: null
+  num_layers: null
+
+cluster:
+  mode: upstream           # upstream(固定伪标签) | dynamic(Stage 2)
+  dynamic:
+    warmup_epochs: 30
+    update_interval: 10    # T
+    tau: 1.0
+    confidence_delta: 0.8  # 初值，必须做敏感性分析
+    k_fixed: true          # 第一版固定 K
+
+loss:
+  lambda_proto: 1.0
+  lambda_batch: 0.0        # multi-sample ST 时再开
+
+training:
+  epochs: 200
+  batch_size: null
+  lr: null
+  optimizer: adam
+
+metrics:
+  - ari                    # 至少；其余按需加 nmi/purity/silhouette
+spatial_map: true          # cluster 映射回空间位置出图

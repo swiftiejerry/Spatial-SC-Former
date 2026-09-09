@@ -1,0 +1,53 @@
+# 已废弃（2026-09-03）：本文件描述的是 slide_4E / K=25 / hidden 64 那一版，
+# 与蓝图主线（A1、hidden 104、3 层、K 由 Leiden 给出）没有一个字段对得上，
+# 任何脚本都不读它。当前默认值见 configs/A1_消融默认配置.yaml，
+# 权威快照是每个 run 自己的 experiments/runs/<run_id>/metrics.json。
+
+# Stage 1: 空间关系消融实验配置
+# 对照组 A (表达) vs B (表达+空间)
+
+experiment:
+  name: stage1_spatial_ablation
+  description: 验证空间邻接关系对聚类质量的影响
+  seeds: [42, 2022, 2023]
+
+data:
+  input_path: data/raw/sci_space/slide_4E_paper_qc_16222_raw.h5ad
+  n_profiles: 16222
+  n_genes: 52636
+
+graph:
+  expression:
+    top_z_k: 20
+    bidirectional: true
+  spatial:
+    k: 10
+    method: knn
+    distance_metric: euclidean
+
+model:
+  hidden_dim: 64
+  num_layers: 2
+  num_clusters: 25
+
+training:
+  cluster_mode: fixed
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  label_smoothing: 0.1
+  reconstruction_weight: 1.0
+  cluster_weight: 1.0
+  max_reconstruction_edges: 100000
+
+variants:
+  A:
+    name: fixed_expression
+    spatial_enabled: false
+  B:
+    name: fixed_spatial
+    spatial_enabled: true
+
+output:
+  base_dir: experiments/runs/stage1
+  report_format: json

@@ -1,0 +1,393 @@
+{
+  "generated_at": "2026-09-08T13:17:15",
+  "purpose": "formal Stage 2 warm-up tau preflight; no ground-truth labels used for selection",
+  "delta_fixed": 0.8,
+  "tau_grid": [
+    0.002,
+    0.005,
+    0.008,
+    0.01,
+    0.015,
+    0.02,
+    0.03,
+    0.05
+  ],
+  "preflight_rule": {
+    "fraction_band": [
+      0.1,
+      0.9
+    ],
+    "require_all_k0_slots_reachable": true,
+    "common_tau_across_seeds": true,
+    "selection": "minimum absolute distance of mean confident fraction from 0.5 among feasible tau"
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "run": "stage2_C_t0.005_d0.8_seed0_formal_tau_preflight_ep30_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1",
+      "embedding_shape": [
+        3484,
+        104
+      ],
+      "k0": 13,
+      "leiden_resolution": 0.5,
+      "formal_initial_partition_ari": 1.0,
+      "formal_initial_partition_exact": true,
+      "embedding_sha256": "39bfe37eaf11ffb9e42444a378dd11983a58e5c67252f0c3161d20a49a14a912",
+      "recomputed_vs_saved_initial_partition_ari": 1.0,
+      "recomputed_vs_saved_initial_partition_exact": true,
+      "geometry": {
+        "top1_similarity_median": 0.999489963054657,
+        "top1_top2_gap_median": 0.0003040432929992676,
+        "prototype_cosine_median": 0.9976150989532471,
+        "prototype_cosine_max": 0.9996031522750854
+      },
+      "tau_grid": [
+        {
+          "tau": 0.002,
+          "confident_fraction_q_gt_0.8": 0.013777267187833786,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.1703508496284485,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.005,
+          "confident_fraction_q_gt_0.8": 0.0005740527994930744,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.11777248233556747,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.008,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.10391031950712204,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.01,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.09889081865549088,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.015,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.0920838713645935,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.02,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.08849941939115524,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.03,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.08480671793222427,
+          "top1_top2_gap_median": 0.0003040432929992676
+        },
+        {
+          "tau": 0.05,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 13,
+          "k0": 13,
+          "confidence_median": 0.08175157010555267,
+          "top1_top2_gap_median": 0.0003040432929992676
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "run": "stage2_C_t0.005_d0.8_seed1_formal_tau_preflight_ep30_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1",
+      "embedding_shape": [
+        3484,
+        104
+      ],
+      "k0": 9,
+      "leiden_resolution": 0.5,
+      "formal_initial_partition_ari": 1.0,
+      "formal_initial_partition_exact": true,
+      "embedding_sha256": "67689b4ffe83d9be59f37680a2ceed86ba231596744a37661687312d4fdd910e",
+      "recomputed_vs_saved_initial_partition_ari": 1.0,
+      "recomputed_vs_saved_initial_partition_exact": true,
+      "geometry": {
+        "top1_similarity_median": 0.9994678497314453,
+        "top1_top2_gap_median": 0.0003718137741088867,
+        "prototype_cosine_median": 0.997778058052063,
+        "prototype_cosine_max": 0.9994535446166992
+      },
+      "tau_grid": [
+        {
+          "tau": 0.002,
+          "confident_fraction_q_gt_0.8": 0.0022962111979722977,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.2280864417552948,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.005,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.15743426978588104,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.008,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.13994823396205902,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.01,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.13420964777469635,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.015,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.12648369371891022,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.02,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.12265688180923462,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.03,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.11880136281251907,
+          "top1_top2_gap_median": 0.0003718137741088867
+        },
+        {
+          "tau": 0.05,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 9,
+          "k0": 9,
+          "confidence_median": 0.1157270148396492,
+          "top1_top2_gap_median": 0.0003718137741088867
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "run": "stage2_C_t0.005_d0.8_seed42_formal_tau_preflight_ep30_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1",
+      "embedding_shape": [
+        3484,
+        104
+      ],
+      "k0": 11,
+      "leiden_resolution": 0.5,
+      "formal_initial_partition_ari": 1.0,
+      "formal_initial_partition_exact": true,
+      "embedding_sha256": "8c3bc98550fa14f7c406d716c045e04b7500419002aa2d2fad125913a53a24f6",
+      "recomputed_vs_saved_initial_partition_ari": 1.0,
+      "recomputed_vs_saved_initial_partition_exact": true,
+      "geometry": {
+        "top1_similarity_median": 0.9995126724243164,
+        "top1_top2_gap_median": 0.00045996904373168945,
+        "prototype_cosine_median": 0.9958816766738892,
+        "prototype_cosine_max": 0.9992481470108032
+      },
+      "tau_grid": [
+        {
+          "tau": 0.002,
+          "confident_fraction_q_gt_0.8": 0.007462686393409967,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.24707679450511932,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.005,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.16367709636688232,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.008,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.13954044878482819,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.01,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.1313660442829132,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.015,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.11960984766483307,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.02,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.11312709003686905,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.03,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.10623061656951904,
+          "top1_top2_gap_median": 0.00045996904373168945
+        },
+        {
+          "tau": 0.05,
+          "confident_fraction_q_gt_0.8": 0.0,
+          "reachable_cluster_slots": 11,
+          "k0": 11,
+          "confidence_median": 0.100366972386837,
+          "top1_top2_gap_median": 0.00045996904373168945
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "tau": 0.002,
+      "fractions_by_seed": [
+        0.013777267187833786,
+        0.0022962111979722977,
+        0.007462686393409967
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.4921546117402613
+    },
+    {
+      "tau": 0.005,
+      "fractions_by_seed": [
+        0.0005740527994930744,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.49980864906683564
+    },
+    {
+      "tau": 0.008,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    },
+    {
+      "tau": 0.01,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    },
+    {
+      "tau": 0.015,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    },
+    {
+      "tau": 0.02,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    },
+    {
+      "tau": 0.03,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    },
+    {
+      "tau": 0.05,
+      "fractions_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_fraction_in_10_90": false,
+      "all_cluster_slots_reachable": true,
+      "passed": false,
+      "distance_from_0.5_mean": 0.5
+    }
+  ],
+  "recommended": null,
+  "preflight_pass": false,
+  "complete": true,
+  "scope": "Only the eight listed tau values; other tau and delta values remain untested. The 10%-90% band is a project screening rule, not specified by the sister's document.",
+  "selection_does_not_use_truth": true
+}

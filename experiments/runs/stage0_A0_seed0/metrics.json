@@ -1,0 +1,80 @@
+{
+  "run_id": "stage0_A0_seed0",
+  "stage": "0",
+  "experiment": "A0 (upstream 口径, 无空间坐标)",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "label_key": "final_annot",
+  "n_spots": 3484,
+  "n_genes": 18085,
+  "use_spatial": false,
+  "seed": 0,
+  "deterministic": true,
+  "hyperparams": {
+    "cell_size": 30,
+    "n_hidden": 104,
+    "n_heads": 8,
+    "n_layers": 3,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "labsm": 0.1,
+    "epochs": 100
+  },
+  "n_batch": 117,
+  "scformer": {
+    "ari": 0.32358551723652723,
+    "nmi": 0.38923757181259067,
+    "n_clusters": 5,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "leiden_baseline": {
+    "ari": 0.3298212370561191,
+    "nmi": 0.4022510963300915,
+    "n_clusters": 5,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "sanity_floor_passed": false,
+  "truth_distribution": {
+    "medulla cords": 1166,
+    "medulla sinuses": 794,
+    "cortex": 722,
+    "pericapsular adipose tissue": 320,
+    "capsule": 202,
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "runtime_sec": 6611.4,
+  "train_sec": 6520.5,
+  "peak_gpu_mem_gb": 0.358,
+  "env": {
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}

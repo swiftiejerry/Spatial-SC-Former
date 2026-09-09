@@ -1,0 +1,218 @@
+{
+  "queue": "D:\\Spatial-scFormer\\experiments\\queue\\goal_stage1.json",
+  "protocol": "D:\\Spatial-scFormer\\configs\\师姐蓝图主线_v1.json",
+  "protocol_sha256": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+  "complete": true,
+  "missing": [],
+  "contract_violations": {},
+  "protocol_hashes": {
+    "stage1_A_seed0_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+    "stage1_A_seed1_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+    "stage1_A_seed42_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+    "stage1_B_k10_seed0_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+    "stage1_B_k10_seed1_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+    "stage1_B_k10_seed42_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1"
+  },
+  "arms": {
+    "A": {
+      "seeds": [
+        0,
+        1,
+        42
+      ],
+      "ari": {
+        "n": 3,
+        "mean": 0.33002141983708505,
+        "sd": 0.00018254941875382348,
+        "values": [
+          0.3301786901654815,
+          0.3300643322896545,
+          0.3298212370561191
+        ]
+      },
+      "nmi": {
+        "n": 3,
+        "mean": 0.40245722523084254,
+        "sd": 0.00018880642806646112,
+        "values": [
+          0.402621779716879,
+          0.4024987996455572,
+          0.4022510963300915
+        ]
+      },
+      "rare_f1": {
+        "n": 3,
+        "mean": 0.0,
+        "sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ari_vs_pseudo": {
+        "n": 3,
+        "mean": 0.9980003741906733,
+        "sd": 0.0017524847883734723,
+        "values": [
+          0.99726949510777,
+          0.99673162746425,
+          1.0
+        ]
+      },
+      "spatial_edges": {
+        "n": 3,
+        "mean": 0.0,
+        "sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "B": {
+      "seeds": [
+        0,
+        1,
+        42
+      ],
+      "ari": {
+        "n": 3,
+        "mean": 0.3297827677728243,
+        "sd": 0.0005672579131216629,
+        "values": [
+          0.33037032090154905,
+          0.3292382572245398,
+          0.3297397251923839
+        ]
+      },
+      "nmi": {
+        "n": 3,
+        "mean": 0.4019448200954998,
+        "sd": 0.00045445538486338106,
+        "values": [
+          0.40202815544037135,
+          0.4014544642105459,
+          0.4023518406355821
+        ]
+      },
+      "rare_f1": {
+        "n": 3,
+        "mean": 0.0,
+        "sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ari_vs_pseudo": {
+        "n": 3,
+        "mean": 0.9970090120643128,
+        "sd": 0.0019560141870413853,
+        "values": [
+          0.994790058086386,
+          0.9977535590150645,
+          0.998483419091488
+        ]
+      },
+      "spatial_edges": {
+        "n": 3,
+        "mean": 38624.0,
+        "sd": 0.0,
+        "values": [
+          38624.0,
+          38624.0,
+          38624.0
+        ]
+      }
+    }
+  },
+  "gates": {
+    "sampler_neutrality": {
+      "seeds": [
+        0,
+        1,
+        42
+      ],
+      "ari_A_minus_A0": [
+        0.006593172928954283,
+        0.0002430952335353842,
+        0.0004168427270342945
+      ],
+      "rare_f1_A_minus_A0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "pass"
+    },
+    "spatial_relation": {
+      "paired": {
+        "rare_f1": {
+          "seeds": [
+            0,
+            1,
+            42
+          ],
+          "values_B_minus_A": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sd": 0.0,
+          "same_sign": false
+        },
+        "ari": {
+          "seeds": [
+            0,
+            1,
+            42
+          ],
+          "values_B_minus_A": [
+            0.00019163073606753844,
+            -0.0008260750651146731,
+            -8.151186373517305e-05
+          ],
+          "mean": -0.00023865206426076924,
+          "sd": 0.000526736230390411,
+          "same_sign": false
+        },
+        "nmi": {
+          "seeds": [
+            0,
+            1,
+            42
+          ],
+          "values_B_minus_A": [
+            -0.0005936242765076649,
+            -0.0010443354350112566,
+            0.00010074430549061875
+          ],
+          "mean": -0.0005124051353427675,
+          "sd": 0.0005768442724822993,
+          "same_sign": false
+        },
+        "ari_vs_pseudo": {
+          "seeds": [
+            0,
+            1,
+            42
+          ],
+          "values_B_minus_A": [
+            -0.002479437021383979,
+            0.0010219315508144255,
+            -0.001516580908512033
+          ],
+          "mean": -0.0009913621263605288,
+          "sd": 0.001808808045768872,
+          "same_sign": false
+        }
+      },
+      "decision": "report_only_until_predeclared_gate_review",
+      "interpretation": "B_minus_A is a matched-sampler relation comparison; it is not evidence that A was coordinate-free."
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "run_id": "stage2_C_t0.02_d0.5_seed0_v2a_preflight",
+  "stage": "2",
+  "arm": "C",
+  "experiment": "C (expression + prototype dynamic)",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
+  "label_key": "final_annot",
+  "n_spots": 3484,
+  "n_genes": 18085,
+  "seed": 0,
+  "deterministic": true,
+  "hyperparams": {
+    "cell_size": 30,
+    "n_hidden": 104,
+    "n_heads": 8,
+    "n_layers": 3,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "labsm": 0.1,
+    "epochs": 50
+  },
+  "dynamic": {
+    "warmup_epochs": 30,
+    "update_interval": 5,
+    "delta": 0.5,
+    "tau": 0.02,
+    "lambda_proto": 1.0,
+    "target_k": 5,
+    "objective": "L_KL + lambda_proto * L_proto (replaces label smoothing and -S_intra)",
+    "cluster_init": {
+      "selection": "first_exact_k",
+      "resolution": 0.55,
+      "k": 5,
+      "scan": [
+        {
+          "resolution": 0.1,
+          "k": 1
+        },
+        {
+          "resolution": 0.15,
+          "k": 2
+        },
+        {
+          "resolution": 0.2,
+          "k": 3
+        },
+        {
+          "resolution": 0.25,
+          "k": 3
+        },
+        {
+          "resolution": 0.3,
+          "k": 3
+        },
+        {
+          "resolution": 0.35,
+          "k": 3
+        },
+        {
+          "resolution": 0.4,
+          "k": 4
+        },
+        {
+          "resolution": 0.45,
+          "k": 4
+        },
+        {
+          "resolution": 0.5,
+          "k": 4
+        },
+        {
+          "resolution": 0.55,
+          "k": 5
+        }
+      ],
+      "n_clusters": 5,
+      "confident_fraction_at_init": 0.5861079096794128,
+      "confidence_grid": {
+        "0.02": {
+          "0.5": 0.5861079096794128,
+          "0.6": 0.23335246741771698,
+          "0.7": 0.035304248332977295,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.05": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.08": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.1": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.15": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.2": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        }
+      }
+    },
+    "n_clusters_used": 2,
+    "confidence_mean": 0.9986988306045532,
+    "confident_fraction": 1.0,
+    "preserve_k": true,
+    "refresh_trace": [
+      {
+        "changed_fraction": 0.7921928817451206,
+        "confident_fraction": 0.0,
+        "confidence_mean": 0.3101615309715271,
+        "n_nonempty": 3,
+        "n_reseeded": 2,
+        "cluster_sizes": [
+          1401,
+          0,
+          29,
+          2054,
+          0
+        ],
+        "reseeded": [
+          1,
+          4
+        ]
+      },
+      {
+        "changed_fraction": 0.10304247990815155,
+        "confident_fraction": 0.9982778429985046,
+        "confidence_mean": 0.7771503329277039,
+        "n_nonempty": 2,
+        "n_reseeded": 3,
+        "cluster_sizes": [
+          1209,
+          0,
+          0,
+          2275,
+          0
+        ],
+        "reseeded": [
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "changed_fraction": 0.0008610792192881745,
+        "confident_fraction": 1.0,
+        "confidence_mean": 0.9981638193130493,
+        "n_nonempty": 2,
+        "n_reseeded": 3,
+        "cluster_sizes": [
+          1212,
+          0,
+          0,
+          2272,
+          0
+        ],
+        "reseeded": [
+          1,
+          2,
+          4
+        ]
+      }
+    ]
+  },
+  "batching": {
+    "sampler": "spatial_median_bisection_with_one_hop_halo",
+    "n_batches": 117
+  },
+  "spatial": {
+    "relation_enabled": false,
+    "num_relations": 2,
+    "mode": "knn",
+    "k": 10,
+    "weighted": false,
+    "n_directed_edges": 38624,
+    "core_incident_retention": 1.0,
+    "total_spatial_edges_in_batches": 0,
+    "min_per_batch": 0,
+    "max_per_batch": 0
+  },
+  "scformer": {
+    "ari": 0.002446210117986776,
+    "nmi": 0.009148136027743213,
+    "n_clusters": 2,
+    "ari_vs_pseudo": 0.004537301771828903,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "rare_per_type": {
+    "follicle": {
+      "n_cells": 96,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "medulla vessels": {
+      "n_cells": 80,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "subcapsular sinus": {
+      "n_cells": 73,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "hilum": {
+      "n_cells": 23,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "trabeculae": {
+      "n_cells": 8,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    }
+  },
+  "leiden_baseline": {
+    "ari": 0.3298212370561191,
+    "nmi": 0.4022510963300915,
+    "n_clusters": 5,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "truth_distribution": {
+    "medulla cords": 1166,
+    "medulla sinuses": 794,
+    "cortex": 722,
+    "pericapsular adipose tissue": 320,
+    "capsule": 202,
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "history_tail": [
+    {
+      "epoch": 44,
+      "stage": 2.0,
+      "loss": 0.03708239693321988,
+      "reconstruction_loss": 0.017834882363358624,
+      "proto_loss": 0.019247514499713562,
+      "confident_spots": 29.77777777777778
+    },
+    {
+      "epoch": 45,
+      "stage": 2.0,
+      "loss": 0.023891626499020137,
+      "reconstruction_loss": 0.017482017994754843,
+      "proto_loss": 0.006409608502524037,
+      "confident_spots": 29.77777777777778
+    },
+    {
+      "epoch": 45.5,
+      "event": 2.0,
+      "changed_fraction": 0.0008610792192881745,
+      "confident_fraction": 1.0,
+      "confidence_mean": 0.9981638193130493,
+      "n_nonempty": 2,
+      "n_reseeded": 3
+    },
+    {
+      "epoch": 46,
+      "stage": 2.0,
+      "loss": 0.04743855566773404,
+      "reconstruction_loss": 0.018737719235066164,
+      "proto_loss": 0.028700836450329177,
+      "confident_spots": 29.743589743589745
+    },
+    {
+      "epoch": 47,
+      "stage": 2.0,
+      "loss": 0.025917081576254632,
+      "reconstruction_loss": 0.017708330009228144,
+      "proto_loss": 0.008208751733191948,
+      "confident_spots": 29.77777777777778
+    },
+    {
+      "epoch": 48,
+      "stage": 2.0,
+      "loss": 0.0253885831269953,
+      "reconstruction_loss": 0.017625985292988457,
+      "proto_loss": 0.007762597785251709,
+      "confident_spots": 29.77777777777778
+    },
+    {
+      "epoch": 49,
+      "stage": 2.0,
+      "loss": 0.018521765151467078,
+      "reconstruction_loss": 0.017252853243715234,
+      "proto_loss": 0.0012689119215575086,
+      "confident_spots": 29.77777777777778
+    },
+    {
+      "epoch": 50,
+      "stage": 2.0,
+      "loss": 0.020011935510441788,
+      "reconstruction_loss": 0.016951962979112424,
+      "proto_loss": 0.0030599725211305846,
+      "confident_spots": 29.76923076923077
+    }
+  ],
+  "runtime_sec": 1453.9,
+  "train_sec": 1410.4,
+  "peak_gpu_mem_gb": 2.099,
+  "env": {
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}

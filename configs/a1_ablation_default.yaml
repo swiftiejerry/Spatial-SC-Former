@@ -1,0 +1,74 @@
+# Spatial-scFormer A1 消融的默认值（Stage 1 / 2 / 3 共用）
+#
+# 这份文件只描述默认值，脚本不读它——超参写在 scripts/运行Stage1实验.py 与
+# scripts/运行Stage23实验.py 的 HP 常量里，每个 run 的权威快照是
+# experiments/runs/<run_id>/metrics.json（含完整超参、数据 SHA-256、随机种子、
+# 空间边统计、指标）。写这份文件是为了让人一眼看清"我们到底在跑什么"，
+# 蓝图第 5 节要求每个 run 存 config。
+
+data:
+  input_path: data/raw/human_lymph_node_A1/adata_RNA.h5ad
+  n_spots: 3484
+  n_genes: 18085
+  label_key: final_annot          # 10 类，其中 5 类稀有，共 280 spot（8.0%）
+  spatial_key: obsm/spatial
+
+endpoints:
+  primary: rare_f1                # 真稀有 = 真值占比 < 5%；预测稀有 = 簇占比 < 4.5%
+  secondary: [ari, nmi, n_clusters, ari_vs_pseudo]
+
+seeds: [0, 1, 42]                 # 主 arm 三 seed；敏感性扫描只跑 seed 0
+
+model:                            # A0 官方超参，Stage 1-3 全程固定
+  n_hidden: 104
+  n_heads: 8
+  n_layers: 3
+
+training:
+  epochs: 100
+  optimizer: AdamW
+  learning_rate: 0.0005
+  weight_decay: 0.1
+  label_smoothing: 0.1            # 只在固定伪标签的 A/B 里生效
+  deterministic: true
+
+batching:
+  sampler: spatial_median_bisection_with_one_hop_halo
+  cell_size: 30
+  n_batches: 117
+  note: halo spot 只参与消息传递，不进聚类损失；上游随机分批只保留 0.78% 的空间边
+
+spatial:                          # 蓝图修改点一
+  method: knn
+  k: 10                           # 敏感性 6 / 10 / 15
+  weighted: false                 # 第一版无权重，且不加 L_spatial
+  relation_id: 2                  # 作为第三种 HGT relation 进入 message passing
+
+dynamic:                          # 蓝图修改点三
+  warmup_epochs: 30               # warmup 只 L_KL
+  update_interval: 10             # 之后每 T epoch 重算 assignment / prototype
+  k0_selection: matched_to_A0_K    # 主 arm C 的 K0 匹配 baseline 的 K=5，这样 C 对 A 只差
+                                   # "标签怎么产生"一个因素；resolution 由 first_exact_k
+                                   # 扫描给出（seed 0 实测落在 0.55），不写死
+  target_k: null                   # 非 null 只用于 K0 敏感性/诊断，不进正式 A/B/C/D 表
+  free_k0: false                   # true 时让 Leiden 自己定 K0（preflight 实测 K0=4，比 A0 更粗）
+  delta: 0.8                       # 蓝图的首轮测试值，敏感性扫 0.6 / 0.8 / 0.9（seed 0）
+  tau: 0.005                       # 必须在 warm-up（只 L_KL）embedding 上标定：
+                                   # experiments/reports/stage2_calibration_warmup/report.json
+                                   # 该 embedding 上 delta=0.8 的高置信占比 0.856，正式 run
+                                   # 的 epoch-30 init 日志复测 0.865；旧值 0.08 在这里是 0.000，
+                                   # L_proto 会恒为 0，Stage 2 被悄悄降级成纯重构
+  tau_sensitivity: [0.005, 0.008]  # 0.008 对应高置信占比 0.607
+  lambda_proto: 1.0
+  objective: L_KL + lambda_proto * L_proto（替换 label smoothing 与 -S_intra，不叠加）
+
+arms:
+  A: {spatial_relation: false, dynamic: false}
+  B: {spatial_relation: true,  dynamic: false}
+  C: {spatial_relation: false, dynamic: true}
+  D: {spatial_relation: true,  dynamic: true}
+
+run_id_pattern:
+  stage1: stage1_{arm}[_k{k}]_seed{seed}
+  stage2: stage2_C_t{tau}_d{delta}_seed{seed}
+  stage3: stage3_D_k{k}_t{tau}_d{delta}_seed{seed}

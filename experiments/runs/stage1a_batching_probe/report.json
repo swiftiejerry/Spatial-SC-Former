@@ -1,0 +1,67 @@
+{
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "n_cells": 3484,
+  "cell_size": 30,
+  "n_batches": 117,
+  "spatial_batch_sizes": {
+    "min": 29,
+    "max": 30,
+    "sum": 3484
+  },
+  "compactness": {
+    "slide_diameter": 144.53373308677806,
+    "mean_block_diameter": 11.013143743351936,
+    "max_block_diameter": 13.92838827718412,
+    "mean_relative_diameter": 0.07619773950444941
+  },
+  "per_k": {
+    "6": {
+      "n_directed_edges": 24378,
+      "spatial_batching_retention": 0.7431290507834933,
+      "spatial_batching_retained_edges": 18116,
+      "random_batching_retention_mean": 0.008286159652145377,
+      "random_batching_retention_per_seed": {
+        "0": 0.009598818606940684,
+        "1": 0.007629830174747723,
+        "42": 0.007629830174747723
+      },
+      "improvement_factor": 89.68316831683168,
+      "halo_retention": 1.0,
+      "halo_retained_edges": 24378,
+      "halo_batch_size_mean": 57.76068376068376,
+      "halo_batch_size_max": 64
+    },
+    "10": {
+      "n_directed_edges": 38624,
+      "spatial_batching_retention": 0.694076222038111,
+      "spatial_batching_retained_edges": 26808,
+      "random_batching_retention_mean": 0.007818972659486329,
+      "random_batching_retention_per_seed": {
+        "0": 0.008699254349627174,
+        "1": 0.007352941176470588,
+        "42": 0.0074047224523612265
+      },
+      "improvement_factor": 88.76821192052981,
+      "halo_retention": 1.0,
+      "halo_retained_edges": 38624,
+      "halo_batch_size_mean": 67.64957264957265,
+      "halo_batch_size_max": 76
+    },
+    "15": {
+      "n_directed_edges": 59032,
+      "spatial_batching_retention": 0.6434815015584767,
+      "spatial_batching_retained_edges": 37986,
+      "random_batching_retention_mean": 0.007995663369020193,
+      "random_batching_retention_per_seed": {
+        "0": 0.008198942946198672,
+        "1": 0.008097303157609433,
+        "42": 0.007690744003252473
+      },
+      "improvement_factor": 80.47881355932202,
+      "halo_retention": 1.0,
+      "halo_retained_edges": 59032,
+      "halo_batch_size_mean": 81.04273504273505,
+      "halo_batch_size_max": 96
+    }
+  }
+}

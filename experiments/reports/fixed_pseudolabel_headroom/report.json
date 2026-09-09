@@ -1,0 +1,134 @@
+{
+  "generated": "2026-09-04T19:55:27",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "pseudo_resolution": 0.8,
+  "rare_types": [
+    "follicle",
+    "medulla vessels",
+    "subcapsular sinus",
+    "hilum",
+    "trabeculae"
+  ],
+  "rare_baseline_share": 0.08036739380022963,
+  "small_cluster_threshold": 0.045,
+  "为什么": "固定伪标签下模型能偏离起点多少个 spot。余量若只有千分之几，B - A 的配对差落在余量之内就仍然是「测不出」，不能读成「空间关系没有效应」。",
+  "rows": [
+    {
+      "seed": 0,
+      "状态": "齐",
+      "arm_a": "stage1_A_pr0.8_seed0",
+      "arm_b": "stage1_B_k10_pr0.8_seed0",
+      "n_spots": 3484,
+      "arm_a_改动_spot": 0,
+      "arm_b_改动_spot": 7,
+      "arm_a_活动余量": 0.0,
+      "arm_b_活动余量": 0.0020091848450057405,
+      "两支之间改动_spot": 7,
+      "arm_b_改动的真值构成": {
+        "medulla cords": 4,
+        "cortex": 1,
+        "medulla vessels": 1,
+        "follicle": 1
+      },
+      "arm_b_改动里稀有类": 2,
+      "arm_a_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          102
+        ],
+        "n_spots_in_small_clusters": 102,
+        "n_rare_in_small_clusters": 75,
+        "rare_share_in_small_clusters": 0.7352941176470589,
+        "min_cluster_share": 0.029276693455797934
+      },
+      "arm_b_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          101
+        ],
+        "n_spots_in_small_clusters": 101,
+        "n_rare_in_small_clusters": 74,
+        "rare_share_in_small_clusters": 0.7326732673267327,
+        "min_cluster_share": 0.02898966704936854
+      }
+    },
+    {
+      "seed": 1,
+      "状态": "齐",
+      "arm_a": "stage1_A_pr0.8_seed1",
+      "arm_b": "stage1_B_k10_pr0.8_seed1",
+      "n_spots": 3484,
+      "arm_a_改动_spot": 1,
+      "arm_b_改动_spot": 0,
+      "arm_a_活动余量": 0.0002870264064293915,
+      "arm_b_活动余量": 0.0,
+      "两支之间改动_spot": 1,
+      "arm_b_改动的真值构成": {},
+      "arm_b_改动里稀有类": 0,
+      "arm_a_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          102
+        ],
+        "n_spots_in_small_clusters": 102,
+        "n_rare_in_small_clusters": 75,
+        "rare_share_in_small_clusters": 0.7352941176470589,
+        "min_cluster_share": 0.029276693455797934
+      },
+      "arm_b_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          102
+        ],
+        "n_spots_in_small_clusters": 102,
+        "n_rare_in_small_clusters": 75,
+        "rare_share_in_small_clusters": 0.7352941176470589,
+        "min_cluster_share": 0.029276693455797934
+      }
+    },
+    {
+      "seed": 42,
+      "状态": "齐",
+      "arm_a": "stage1_A_pr0.8_seed42",
+      "arm_b": "stage1_B_k10_pr0.8_seed42",
+      "n_spots": 3484,
+      "arm_a_改动_spot": 65,
+      "arm_b_改动_spot": 5,
+      "arm_a_活动余量": 0.018656716417910446,
+      "arm_b_活动余量": 0.0014351320321469576,
+      "两支之间改动_spot": 69,
+      "arm_b_改动的真值构成": {
+        "cortex": 3,
+        "pericapsular adipose tissue": 1,
+        "follicle": 1
+      },
+      "arm_b_改动里稀有类": 1,
+      "arm_a_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          98
+        ],
+        "n_spots_in_small_clusters": 98,
+        "n_rare_in_small_clusters": 72,
+        "rare_share_in_small_clusters": 0.7346938775510204,
+        "min_cluster_share": 0.02812858783008037
+      },
+      "arm_b_小簇": {
+        "n_small_clusters": 1,
+        "small_cluster_sizes": [
+          100
+        ],
+        "n_spots_in_small_clusters": 100,
+        "n_rare_in_small_clusters": 74,
+        "rare_share_in_small_clusters": 0.74,
+        "min_cluster_share": 0.02870264064293915
+      }
+    }
+  ],
+  "汇总": {
+    "n_seeds": 3,
+    "arm_a_活动余量_最大": 0.018656716417910446,
+    "arm_b_活动余量_最大": 0.0020091848450057405,
+    "两支之间改动_最大": 69
+  }
+}

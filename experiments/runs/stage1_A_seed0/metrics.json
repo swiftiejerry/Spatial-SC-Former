@@ -1,0 +1,168 @@
+{
+  "run_id": "stage1_A_seed0",
+  "stage": "1",
+  "arm": "A",
+  "experiment": "A (expression only, spatial batching)",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
+  "label_key": "final_annot",
+  "n_spots": 3484,
+  "n_genes": 18085,
+  "seed": 0,
+  "deterministic": true,
+  "hyperparams": {
+    "cell_size": 30,
+    "n_hidden": 104,
+    "n_heads": 8,
+    "n_layers": 3,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "labsm": 0.1,
+    "epochs": 100
+  },
+  "batching": {
+    "sampler": "spatial_median_bisection_with_one_hop_halo",
+    "n_batches": 117,
+    "core_sizes": {
+      "min": 29,
+      "max": 30
+    },
+    "batch_sizes_with_halo": {
+      "min": 55,
+      "max": 76
+    }
+  },
+  "spatial": {
+    "relation_enabled": false,
+    "num_relations": 2,
+    "mode": "knn",
+    "k": 10,
+    "weighted": false,
+    "n_directed_edges": 38624,
+    "core_incident_retention": 1.0,
+    "total_spatial_edges_in_batches": 0,
+    "min_per_batch": 0,
+    "max_per_batch": 0
+  },
+  "scformer": {
+    "ari": 0.3301786901654815,
+    "nmi": 0.402621779716879,
+    "n_clusters": 5,
+    "ari_vs_pseudo": 0.99726949510777,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "rare_per_type": {
+    "follicle": {
+      "n_cells": 96,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "medulla vessels": {
+      "n_cells": 80,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "subcapsular sinus": {
+      "n_cells": 73,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "hilum": {
+      "n_cells": 23,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "trabeculae": {
+      "n_cells": 8,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    }
+  },
+  "leiden_baseline": {
+    "ari": 0.3298212370561191,
+    "nmi": 0.4022510963300915,
+    "n_clusters": 5,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "truth_distribution": {
+    "medulla cords": 1166,
+    "medulla sinuses": 794,
+    "cortex": 722,
+    "pericapsular adipose tissue": 320,
+    "capsule": 202,
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "history_tail": [
+    {
+      "epoch": 96,
+      "loss": -1.7292288113863041,
+      "reconstruction_loss": 0.0132012641749894,
+      "cluster_loss": 0.7899127729937562,
+      "intra_similarity": 2.5323428496336327
+    },
+    {
+      "epoch": 97,
+      "loss": -1.7296612833300207,
+      "reconstruction_loss": 0.013102398966399267,
+      "cluster_loss": 0.7892694055524647,
+      "intra_similarity": 2.5320330898985905
+    },
+    {
+      "epoch": 98,
+      "loss": -1.7320002882908552,
+      "reconstruction_loss": 0.01295692963987334,
+      "cluster_loss": 0.7880654579553849,
+      "intra_similarity": 2.5330226762681947
+    },
+    {
+      "epoch": 99,
+      "loss": -1.7339376363998804,
+      "reconstruction_loss": 0.012635723488707827,
+      "cluster_loss": 0.7875582265038775,
+      "intra_similarity": 2.5341315885894318
+    },
+    {
+      "epoch": 100,
+      "loss": -1.732313304884821,
+      "reconstruction_loss": 0.012329734447929595,
+      "cluster_loss": 0.7889275031212049,
+      "intra_similarity": 2.533570544841962
+    }
+  ],
+  "runtime_sec": 1418.8,
+  "train_sec": 1392.0,
+  "peak_gpu_mem_gb": 2.099,
+  "env": {
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}

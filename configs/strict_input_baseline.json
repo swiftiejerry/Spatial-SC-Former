@@ -1,0 +1,101 @@
+{
+  "protocol": {
+    "name": "sister_blueprint_strict_input_v1",
+    "line": "sister_blueprint_mainline",
+    "status": "preflight_only_not_yet_effect_validation",
+    "source": "C:/Users/Administrator/Desktop/scFormer修改思路.docx",
+    "dataset": "data/raw/human_lymph_node_A1/adata_RNA.h5ad",
+    "label_key": "final_annot",
+    "seeds": [0, 1, 42],
+    "one_primary_factor_per_stage": true
+  },
+  "input_base": {
+    "expression_flow": "counts -> normalization/log -> X -> gene-wise Z",
+    "gene_selection": "paper_topz",
+    "topz_k": 20,
+    "topz_deterministic": true,
+    "spot_node_input": "scanpy_normalize_log_scale",
+    "gene_node_input": "paper_z",
+    "kl_target": "counts",
+    "kl_target_note": "The sister document specifies X -> Z -> Top-Z but does not specify the KL target; counts is retained here only to avoid silently adding the separate paper-X diagnostic factor.",
+    "batching_cell_size": 30,
+    "batching": "matched spatial_median_bisection_with_one_hop_halo",
+    "remaining_conventions": [
+      "A/C still use coordinates for matched batching, not for an HGT spatial relation; literal no-coordinate baseline is not yet met.",
+      "Spot Z uses scanpy scale sample-standard-deviation; gene Z uses population-standard-deviation. Both standardize per gene, but exact numeric equality is not claimed.",
+      "Empty prototype reseeding is an engineering convention, not specified by the sister document.",
+      "tau=0.005 is only a smoke value and is not calibrated for this input base."
+    ]
+  },
+  "stage0": {
+    "purpose": "strict input-base smoke and later baseline",
+    "status": "smoke_pending",
+    "spatial_relation": false,
+    "dynamic_clustering": false
+  },
+  "stage1": {
+    "name": "spot_spot_spatial_relation",
+    "arms": ["A", "B"],
+    "only_difference": "spatial_relation",
+    "spatial_relation": {
+      "A": false,
+      "B": true,
+      "method": "knn",
+      "k": 10,
+      "weighted": false,
+      "enters_hgt_as_relation": true,
+      "extra_spatial_loss": false
+    },
+    "pseudo_labels": "fixed_upstream_leiden",
+    "loss": "upstream_loss_unchanged"
+  },
+  "stage2": {
+    "name": "prototype_dynamic_clustering",
+    "arm": "C",
+    "spatial_relation": false,
+    "warmup": {"epochs": 30, "loss": "L_KL_only"},
+    "initialization": {
+      "source": "warmup_embedding_H_spot",
+      "leiden": true,
+      "resolution": 0.5,
+      "neighbors": 10,
+      "K": "learned_from_warmup_leiden",
+      "free_k0": true
+    },
+    "prototype": {
+      "K_fixed_after_initialization": true,
+      "cosine_centering": false,
+      "delta_mode": "absolute",
+      "delta": 0.8,
+      "temperature": 0.005,
+      "confidence_rule": "q_greater_than_delta",
+      "preserve_empty_cluster_slots": true
+    },
+    "loss_after_warmup": {
+      "formula": "L_KL + lambda_proto * L_proto",
+      "lambda_proto": 1.0,
+      "replaces_fixed_clustering_loss": true,
+      "replaces_intra_cluster_term": true
+    },
+    "refresh": {
+      "interval_epochs": 10,
+      "update_assignment_and_prototype": true,
+      "variable_k_split_merge": false
+    }
+  },
+  "stage3": {
+    "name": "spatial_plus_dynamic",
+    "arm": "D",
+    "only_new_difference_from_stage2": "spatial_relation",
+    "status": "smoke_pending"
+  },
+  "stage4": {"name": "A_B_C_D_multiseed_ablation", "status": "not_started"},
+  "execution_policy": {
+    "first_run": "one_to_two_epoch_smoke_only",
+    "no_long_training_until": "strict input smoke passes and protocol report is reviewed",
+    "gene_gene_relation": "later",
+    "variable_k_split_merge": false,
+    "extra_L_spatial": false,
+    "paper_x_batch300_eval": "separate diagnostic line"
+  }
+}

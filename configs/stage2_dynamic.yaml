@@ -1,0 +1,60 @@
+# 已废弃（2026-09-03）：本文件描述的是 slide_4E / K=25 / hidden 64 那一版，
+# 与蓝图主线对不上，任何脚本都不读它。当前默认值见 configs/A1_消融默认配置.yaml，
+# 权威快照是每个 run 自己的 experiments/runs/<run_id>/metrics.json。
+
+# Stage 2: 动态标签更新实验配置
+# 对照组 C (表达+动态) vs A (表达+固定)
+
+experiment:
+  name: stage2_dynamic_update
+  description: 验证动态标签更新对聚类质量的影响
+  seeds: [42, 2022, 2023]
+
+data:
+  input_path: data/raw/sci_space/slide_4E_paper_qc_16222_raw.h5ad
+  n_profiles: 16222
+  n_genes: 52636
+
+graph:
+  expression:
+    top_z_k: 20
+    bidirectional: true
+  spatial:
+    k: 10
+    method: knn
+    distance_metric: euclidean
+
+model:
+  hidden_dim: 64
+  num_layers: 2
+  num_clusters: 25
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  label_smoothing: 0.1
+  reconstruction_weight: 1.0
+  cluster_weight: 1.0
+  max_reconstruction_edges: 100000
+  
+  # Dynamic 专属参数
+  warmup_epochs: 20
+  update_interval: 5
+  confidence_threshold: 0.8
+  prototype_temperature: 0.5
+  prototype_momentum: 0.9
+
+variants:
+  A:
+    name: fixed_expression
+    cluster_mode: fixed
+    spatial_enabled: false
+  C:
+    name: dynamic_expression
+    cluster_mode: dynamic
+    spatial_enabled: false
+
+output:
+  base_dir: experiments/runs/stage2
+  report_format: json

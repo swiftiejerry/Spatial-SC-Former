@@ -1,0 +1,12 @@
+cluster,n_cells,pct,top_truth,top_n,purity,n_truth_types
+8,706,20.26,medulla cords,343,0.486,7
+3,456,13.09,medulla cords,269,0.59,8
+1,422,12.11,medulla sinuses,146,0.346,8
+4,366,10.51,cortex,216,0.59,8
+7,363,10.42,medulla cords,164,0.452,9
+0,291,8.35,medulla sinuses,146,0.502,8
+6,284,8.15,cortex,118,0.415,8
+2,265,7.61,medulla sinuses,144,0.543,8
+5,196,5.63,medulla sinuses,46,0.235,8
+9,88,2.53,medulla sinuses,40,0.455,7
+10,47,1.35,medulla sinuses,17,0.362,8

@@ -1,0 +1,250 @@
+{
+  "run_id": "stage2_C_t0.08_d0.8_seed0_preflight",
+  "stage": "2",
+  "arm": "C",
+  "experiment": "C (expression + prototype dynamic)",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
+  "label_key": "final_annot",
+  "n_spots": 3484,
+  "n_genes": 18085,
+  "seed": 0,
+  "deterministic": true,
+  "hyperparams": {
+    "cell_size": 30,
+    "n_hidden": 104,
+    "n_heads": 8,
+    "n_layers": 3,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "labsm": 0.1,
+    "epochs": 31
+  },
+  "dynamic": {
+    "warmup_epochs": 30,
+    "update_interval": 10,
+    "delta": 0.8,
+    "tau": 0.08,
+    "lambda_proto": 1.0,
+    "target_k": null,
+    "objective": "L_KL + lambda_proto * L_proto (replaces label smoothing and -S_intra)",
+    "cluster_init": {
+      "selection": "fixed_resolution",
+      "resolution": 0.5,
+      "k": 4,
+      "n_clusters": 4,
+      "confident_fraction_at_init": 0.0,
+      "confidence_grid": {
+        "0.02": {
+          "0.5": 0.8326635956764221,
+          "0.6": 0.4595292806625366,
+          "0.7": 0.14638346433639526,
+          "0.8": 0.002583237597718835,
+          "0.9": 0.0
+        },
+        "0.05": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.08": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.1": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.15": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "0.2": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        }
+      }
+    },
+    "n_clusters_used": 4,
+    "confidence_mean": 0.33083459734916687,
+    "confident_fraction": 0.0
+  },
+  "batching": {
+    "sampler": "spatial_median_bisection_with_one_hop_halo",
+    "n_batches": 117
+  },
+  "spatial": {
+    "relation_enabled": false,
+    "num_relations": 2,
+    "mode": "knn",
+    "k": 10,
+    "weighted": false,
+    "n_directed_edges": 38624,
+    "core_incident_retention": 1.0,
+    "total_spatial_edges_in_batches": 0,
+    "min_per_batch": 0,
+    "max_per_batch": 0
+  },
+  "scformer": {
+    "ari": -0.0021874279235839463,
+    "nmi": 0.0018280245408747345,
+    "n_clusters": 4,
+    "ari_vs_pseudo": -0.0011591790615243678,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "rare_per_type": {
+    "follicle": {
+      "n_cells": 96,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "medulla vessels": {
+      "n_cells": 80,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "subcapsular sinus": {
+      "n_cells": 73,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "hilum": {
+      "n_cells": 23,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "trabeculae": {
+      "n_cells": 8,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    }
+  },
+  "leiden_baseline": {
+    "ari": 0.3298212370561191,
+    "nmi": 0.4022510963300915,
+    "n_clusters": 5,
+    "rare_f1": 0.0,
+    "rare_precision": 0.0,
+    "rare_recall": 0.0,
+    "n_true_rare": 280,
+    "n_pred_rare": 0,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 0
+  },
+  "truth_distribution": {
+    "medulla cords": 1166,
+    "medulla sinuses": 794,
+    "cortex": 722,
+    "pericapsular adipose tissue": 320,
+    "capsule": 202,
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "history_tail": [
+    {
+      "epoch": 25,
+      "stage": 1.0,
+      "loss": 0.013772857001321947,
+      "reconstruction_loss": 0.013772857001321947,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 26,
+      "stage": 1.0,
+      "loss": 0.013574082006373975,
+      "reconstruction_loss": 0.013574082006373975,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 27,
+      "stage": 1.0,
+      "loss": 0.013527572027638428,
+      "reconstruction_loss": 0.013527572027638428,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 28,
+      "stage": 1.0,
+      "loss": 0.013432281617170725,
+      "reconstruction_loss": 0.013432281617170725,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 29,
+      "stage": 1.0,
+      "loss": 0.013269962169803105,
+      "reconstruction_loss": 0.013269962169803105,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 30,
+      "stage": 1.0,
+      "loss": 0.013132988634463558,
+      "reconstruction_loss": 0.013132988634463558,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    },
+    {
+      "epoch": 30.5,
+      "event": 1.0,
+      "init_k": 4.0,
+      "init_resolution": 0.5
+    },
+    {
+      "epoch": 31,
+      "stage": 2.0,
+      "loss": 0.012989234971280536,
+      "reconstruction_loss": 0.012989234971280536,
+      "proto_loss": 0.0,
+      "confident_spots": 0.0
+    }
+  ],
+  "runtime_sec": 1020.4,
+  "train_sec": 971.3,
+  "peak_gpu_mem_gb": 2.099,
+  "env": {
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}
