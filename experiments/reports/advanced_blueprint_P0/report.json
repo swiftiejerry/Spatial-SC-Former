@@ -1,0 +1,14 @@
+{
+  "protocol": "configs/进阶蓝图_P0协议_v1.json",
+  "protocol_sha256": "09b64880db81ccdb4d19cf8519d778a09f79998085c920c4123656dd83a7f3c9",
+  "status": "pass",
+  "scope": "P0 static contract only; no dataset, GPU, or training used",
+  "failures": [],
+  "decisions": {
+    "kl_target": "X",
+    "A0_Astar_both_registered": true,
+    "low_confidence_policy": "retain_old_assignment_and_exclude_from_new_prototype_until_confirmed",
+    "rare_f1_primary": "<=5%"
+  },
+  "next_stage": "P1_A0_Astar_warmup_gate"
+}

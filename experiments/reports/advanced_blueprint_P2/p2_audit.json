@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "failures": [],
+  "required_seeds": [
+    0,
+    1,
+    42
+  ],
+  "B0_only_new_factor": "spatial relation"
+}
