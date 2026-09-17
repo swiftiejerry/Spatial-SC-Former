@@ -1,0 +1,207 @@
+{
+  "n_total": 3484,
+  "n_true_rare": 280,
+  "rare_types": {
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "pred_rare_limit_spots": 156.78,
+  "target_k": 5,
+  "construction": {
+    "n_small_clusters": 2,
+    "small_cluster_sizes": [
+      127,
+      153
+    ],
+    "small_cluster_members": [
+      [
+        "follicle",
+        "hilum",
+        "trabeculae"
+      ],
+      [
+        "medulla vessels",
+        "subcapsular sinus"
+      ]
+    ],
+    "clusters_used": 3,
+    "feasible_at_target_k": true,
+    "rare_f1": 1.0
+  },
+  "exhaustive_search": {
+    "n_partitions": 42525,
+    "best_rare_f1": 1.0,
+    "best_partition": [
+      [
+        "medulla cords"
+      ],
+      [
+        "medulla sinuses"
+      ],
+      [
+        "cortex",
+        "pericapsular adipose tissue",
+        "capsule"
+      ],
+      [
+        "medulla vessels",
+        "subcapsular sinus"
+      ],
+      [
+        "follicle",
+        "hilum",
+        "trabeculae"
+      ]
+    ]
+  },
+  "observed_runs": [
+    {
+      "run_id": "stage0_A0_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06831228473019518,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage0_A0_seed1",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06888633754305395,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage0_A0_seed42",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06888633754305395,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_A_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06917336394948335,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_A_seed1",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06888633754305395,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_A_seed42",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06888633754305395,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_B_k10_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06946039035591274,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_B_k10_seed1",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06917336394948335,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_B_k10_seed42",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06859931113662457,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_B_k15_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.0878300803673938,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage1_B_k6_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 5,
+      "min_cluster_share": 0.06888633754305395,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage2_C_t0.005_d0.8_seed0",
+      "rare_f1": 0.0,
+      "n_clusters": 2,
+      "min_cluster_share": 0.10935706084959816,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage2_C_t0.02_d0.5_seed0_v2a_preflight",
+      "rare_f1": 0.0,
+      "n_clusters": 2,
+      "min_cluster_share": 0.3475889781859931,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage2_C_t0.08_d0.8_seed0_preflight",
+      "rare_f1": 0.0,
+      "n_clusters": 4,
+      "min_cluster_share": 0.16389207807118256,
+      "n_small_cluster_spots": null,
+      "rare_share_in_small_clusters": null,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage2_C_t0.2_dq0.2_seed0_v2b_nocenter",
+      "rare_f1": 0.02416918429003021,
+      "n_clusters": 5,
+      "min_cluster_share": 0.006314580941446613,
+      "n_small_cluster_spots": 51,
+      "rare_share_in_small_clusters": 0.0784313725490196,
+      "section_rare_base_rate": 0.08036739380022963
+    },
+    {
+      "run_id": "stage2_C_t0.2_dq0.2_seed0_v2b_preflight",
+      "rare_f1": 0.02717391304347826,
+      "n_clusters": 5,
+      "min_cluster_share": 0.02525832376578645,
+      "n_small_cluster_spots": 88,
+      "rare_share_in_small_clusters": 0.056818181818181816,
+      "section_rare_base_rate": 0.08036739380022963
+    }
+  ],
+  "conclusion": "K=5 is not a hard ceiling on attainable rare-domain F1: the maximum over merges of the 10 annotated domains is 1.0000. The endpoint is pinned in practice by whether the initial partition contains a cluster below the 4.5% threshold."
+}
