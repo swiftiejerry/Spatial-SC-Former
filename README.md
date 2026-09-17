@@ -1,4 +1,4 @@
-# Spatial-scFormer
+# Spatial-scformer-probe
 
 A test of whether two common fixes recover rare tissue domains that a baseline
 model misses: giving a spatial transcriptomics model the tissue coordinates it

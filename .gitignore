@@ -19,3 +19,13 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+
+# LaTeX intermediates (only .tex sources and figure PDFs are tracked)
+report/source/*.aux
+report/source/*.log
+report/source/*.out
+report/source/*.toc
+report/source/*.fls
+report/source/*.fdb_latexmk
+report/source/*.synctex.gz
+report/source/main.pdf
