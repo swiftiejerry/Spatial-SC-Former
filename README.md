@@ -1,5 +1,7 @@
 # Spatial-scformer-probe
 
+English | [简体中文](README_CN.md)
+
 A test of whether two common fixes recover rare tissue domains that a baseline
 model misses: giving a spatial transcriptomics model the tissue coordinates it
 was not using, and letting its cluster targets move during training.
