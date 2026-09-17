@@ -1,5 +1,5 @@
 {
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "target_k": 5,
   "knn": 10,
   "表示": [

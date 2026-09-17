@@ -3,7 +3,7 @@
   "stage": "2",
   "arm": "C",
   "experiment": "C (expression + prototype dynamic)",
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
   "label_key": "final_annot",
   "n_spots": 3484,

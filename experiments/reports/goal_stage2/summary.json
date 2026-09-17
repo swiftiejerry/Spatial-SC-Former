@@ -1,18 +1,17 @@
 {
-  "queue": "D:\\Spatial-scFormer\\experiments\\queue\\goal_stage2.json",
-  "protocol": "D:\\Spatial-scFormer\\configs\\师姐蓝图主线_v1.json",
-  "protocol_sha256": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f",
+  "queue": "\\experiments\\queue\\goal_stage2.json",
+  "protocol": "configs/mainline_protocol.json",
   "generated_at": "2026-09-07T19:51:37",
   "scope": {
     "label": "公开代码基线模块对照",
     "record_check_only": true,
-    "strict_sister_blueprint_reproduction": false,
-    "limitation": "原 docx 明确以 Top-Z 和 spot/gene Z 为基底；本批为 upstream_sampled/counts，不是完整严格师姐蓝图。",
+    "strict_design_reproduction": false,
+    "limitation": "原 docx 明确以 Top-Z 和 spot/gene Z 为基底；本批为 upstream_sampled/counts，不是完整严格的设计稿。",
     "unverified": [
       "历史 metrics 未记录初始化 Leiden neighbors 的实际值；不能由哈希推定。"
     ],
     "comparisons": {
-      "paired_vs_formal_a": "师姐要求的 C 对 A 比较",
+      "paired_vs_formal_a": "设计要求的 C 对 A 比较",
       "paired_final_minus_initial": "项目额外验收：final 对同 run warm-up 初始划分"
     }
   },
@@ -63,9 +62,9 @@
   },
   "runs": [
     {
-      "run_id": "stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1",
+      "run_id": "stage2_C_t0.005_d0.8_seed0_design_v1",
       "seed": 0,
-      "metrics_path": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1\\metrics.json",
+      "metrics_path": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed0_design_v1\\metrics.json",
       "initial": {
         "artifact": "warmup_init_labels.npy",
         "ari": 0.08129560263803491,
@@ -485,14 +484,13 @@
         "epochs": 100,
         "last_history_epoch": 100.5,
         "last_training_epoch": 100,
-        "required_artifacts_present": true,
-        "protocol_sha256": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f"
+        "required_artifacts_present": true
       }
     },
     {
-      "run_id": "stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1",
+      "run_id": "stage2_C_t0.005_d0.8_seed1_design_v1",
       "seed": 1,
-      "metrics_path": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1\\metrics.json",
+      "metrics_path": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed1_design_v1\\metrics.json",
       "initial": {
         "artifact": "warmup_init_labels.npy",
         "ari": 0.11789519229292734,
@@ -868,14 +866,13 @@
         "epochs": 100,
         "last_history_epoch": 100.5,
         "last_training_epoch": 100,
-        "required_artifacts_present": true,
-        "protocol_sha256": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f"
+        "required_artifacts_present": true
       }
     },
     {
-      "run_id": "stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1",
+      "run_id": "stage2_C_t0.005_d0.8_seed42_design_v1",
       "seed": 42,
-      "metrics_path": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1\\metrics.json",
+      "metrics_path": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed42_design_v1\\metrics.json",
       "initial": {
         "artifact": "warmup_init_labels.npy",
         "ari": 0.10752629521919733,
@@ -1281,8 +1278,7 @@
         "epochs": 100,
         "last_history_epoch": 100.5,
         "last_training_epoch": 100,
-        "required_artifacts_present": true,
-        "protocol_sha256": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f"
+        "required_artifacts_present": true
       }
     }
   ],
@@ -1399,9 +1395,9 @@
     "source": {
       "kind": "formal_stage1_a_metrics",
       "paths": [
-        "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed0_sister_blueprint_v1\\metrics.json",
-        "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed1_sister_blueprint_v1\\metrics.json",
-        "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed42_sister_blueprint_v1\\metrics.json"
+        "\\experiments\\runs\\stage1_A_seed0_design_v1\\metrics.json",
+        "\\experiments\\runs\\stage1_A_seed1_design_v1\\metrics.json",
+        "\\experiments\\runs\\stage1_A_seed42_design_v1\\metrics.json"
       ]
     },
     "complete": true,
@@ -1414,10 +1410,10 @@
     "pairs": [
       {
         "seed": 0,
-        "run_id_a": "stage1_A_seed0_sister_blueprint_v1",
-        "run_id_c": "stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1",
-        "source_a": "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed0_sister_blueprint_v1\\metrics.json",
-        "source_c": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1\\metrics.json",
+        "run_id_a": "stage1_A_seed0_design_v1",
+        "run_id_c": "stage2_C_t0.005_d0.8_seed0_design_v1",
+        "source_a": "\\experiments\\runs\\stage1_A_seed0_design_v1\\metrics.json",
+        "source_c": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed0_design_v1\\metrics.json",
         "protocol_sha256_a": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
         "protocol_sha256_c": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f",
         "formal_a": {
@@ -1438,10 +1434,10 @@
       },
       {
         "seed": 1,
-        "run_id_a": "stage1_A_seed1_sister_blueprint_v1",
-        "run_id_c": "stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1",
-        "source_a": "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed1_sister_blueprint_v1\\metrics.json",
-        "source_c": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1\\metrics.json",
+        "run_id_a": "stage1_A_seed1_design_v1",
+        "run_id_c": "stage2_C_t0.005_d0.8_seed1_design_v1",
+        "source_a": "\\experiments\\runs\\stage1_A_seed1_design_v1\\metrics.json",
+        "source_c": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed1_design_v1\\metrics.json",
         "protocol_sha256_a": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
         "protocol_sha256_c": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f",
         "formal_a": {
@@ -1462,10 +1458,10 @@
       },
       {
         "seed": 42,
-        "run_id_a": "stage1_A_seed42_sister_blueprint_v1",
-        "run_id_c": "stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1",
-        "source_a": "D:\\Spatial-scFormer\\experiments\\runs\\stage1_A_seed42_sister_blueprint_v1\\metrics.json",
-        "source_c": "D:\\Spatial-scFormer\\experiments\\runs\\stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1\\metrics.json",
+        "run_id_a": "stage1_A_seed42_design_v1",
+        "run_id_c": "stage2_C_t0.005_d0.8_seed42_design_v1",
+        "source_a": "\\experiments\\runs\\stage1_A_seed42_design_v1\\metrics.json",
+        "source_c": "\\experiments\\runs\\stage2_C_t0.005_d0.8_seed42_design_v1\\metrics.json",
         "protocol_sha256_a": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
         "protocol_sha256_c": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f",
         "formal_a": {
@@ -1485,7 +1481,7 @@
         }
       }
     ],
-    "interpretation": "师姐要求的 C 对 A 比较，按同 seed 计算 C-A；本批仅为公开代码基线模块对照。",
+    "interpretation": "设计要求的 C 对 A 比较，按同 seed 计算 C-A；本批仅为公开代码基线模块对照。",
     "ari": {
       "n": 3,
       "mean": -0.19657490789760815,
@@ -1843,5 +1839,5 @@
     "mechanism.proto_loss_final": "末次训练 epoch 的 proto_loss，排除 refresh 事件；缺失为 null，不默认成 0。",
     "gates.confidence_active_at_final_by_seed": "兼容字段，读取 dynamic.confident_fraction（最终 predict）。"
   },
-  "interpretation": "本批是公开代码基线模块对照，不是完整严格师姐蓝图：upstream_sampled/counts 不满足原 docx 的 Top-Z 与 spot/gene Z 基底要求。这里只核验已记录参数，哈希相同不代表参数一致，也不证明 docx 细节逐字一致。师姐要求的 C-A 见 paired_vs_formal_a；final-initial 是项目额外验收，不能替代 C-A。最终 predict 与末次 refresh 的置信比例分别记录，不可混用。"
+  "interpretation": "本批是公开代码基线模块对照，不是完整严格的设计稿：upstream_sampled/counts 不满足原 docx 的 Top-Z 与 spot/gene Z 基底要求。这里只核验已记录参数，哈希相同不代表参数一致，也不证明 docx 细节逐字一致。设计要求的 C-A 见 paired_vs_formal_a；final-initial 是项目额外验收，不能替代 C-A。最终 predict 与末次 refresh 的置信比例分别记录，不可混用。"
 }

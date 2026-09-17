@@ -1,18 +1,9 @@
 {
-  "queue": "D:\\Spatial-scFormer\\experiments\\queue\\goal_stage1.json",
-  "protocol": "D:\\Spatial-scFormer\\configs\\师姐蓝图主线_v1.json",
-  "protocol_sha256": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
+  "queue": "\\experiments\\queue\\goal_stage1.json",
+  "protocol": "configs/mainline_protocol.json",
   "complete": true,
   "missing": [],
   "contract_violations": {},
-  "protocol_hashes": {
-    "stage1_A_seed0_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
-    "stage1_A_seed1_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
-    "stage1_A_seed42_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
-    "stage1_B_k10_seed0_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
-    "stage1_B_k10_seed1_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1",
-    "stage1_B_k10_seed42_sister_blueprint_v1": "a3e8e255e2b004ed7f922c6f2a75637df17a929a343d8ef012e413ee86af49f1"
-  },
   "arms": {
     "A": {
       "seeds": [

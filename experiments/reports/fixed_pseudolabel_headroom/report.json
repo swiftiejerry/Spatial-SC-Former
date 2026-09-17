@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-04T19:55:27",
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "pseudo_resolution": 0.8,
   "rare_types": [
     "follicle",

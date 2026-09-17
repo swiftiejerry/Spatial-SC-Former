@@ -1,10 +1,14 @@
 {
   "protocol": {
-    "name": "sister_blueprint_mainline_v1",
-    "line": "sister_blueprint_mainline",
+    "name": "design_mainline_v1",
+    "line": "design_mainline",
     "dataset": "data/raw/human_lymph_node_A1/adata_RNA.h5ad",
     "label_key": "final_annot",
-    "seeds": [0, 1, 42],
+    "seeds": [
+      0,
+      1,
+      42
+    ],
     "one_primary_factor_per_stage": true
   },
   "stage0": {
@@ -14,7 +18,10 @@
   },
   "stage1": {
     "name": "spot_spot_spatial_relation",
-    "arms": ["A", "B"],
+    "arms": [
+      "A",
+      "B"
+    ],
     "only_difference": "spatial_relation",
     "gene_selection": "upstream_sampled",
     "kl_target": "counts",
@@ -90,8 +97,8 @@
     "status": "blocked_until_stage1_and_stage2_gates_are_recorded"
   },
   "commands": {
-    "stage1": "python scripts/运行Stage1实验.py --arm {A|B} --seed {0|1|42} --spatial-k 10 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/师姐蓝图主线_v1.json --tag sister_blueprint_v1",
-    "stage2": "python scripts/运行Stage23实验.py --arm C --seed {0|1|42} --warmup-epochs 30 --update-interval 10 --tau 0.005 --delta 0.8 --delta-mode absolute --no-center-embedding --init-source warmup_leiden --free-k0 --leiden-resolution 0.5 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/师姐蓝图主线_v1.json --tag sister_blueprint_v1"
+    "stage1": "python scripts/运行Stage1实验.py --arm {A|B} --seed {0|1|42} --spatial-k 10 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/设计文档主线_v1.json --tag design_v1",
+    "stage2": "python scripts/运行Stage23实验.py --arm C --seed {0|1|42} --warmup-epochs 30 --update-interval 10 --tau 0.005 --delta 0.8 --delta-mode absolute --no-center-embedding --init-source warmup_leiden --free-k0 --leiden-resolution 0.5 --graph upstream_sampled --kl-target counts --gene-input counts --protocol-file configs/设计文档主线_v1.json --tag design_v1"
   },
   "excluded_from_this_protocol": [
     "paper_topz",

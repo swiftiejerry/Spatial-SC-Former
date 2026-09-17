@@ -1,6 +1,5 @@
 {
   "protocol": "configs/进阶蓝图_P0协议_v1.json",
-  "protocol_sha256": "09b64880db81ccdb4d19cf8519d778a09f79998085c920c4123656dd83a7f3c9",
   "status": "pass",
   "scope": "P0 static contract only; no dataset, GPU, or training used",
   "failures": [],

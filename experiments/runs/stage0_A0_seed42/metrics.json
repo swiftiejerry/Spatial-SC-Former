@@ -2,7 +2,7 @@
   "run_id": "stage0_A0_seed42",
   "stage": "0",
   "experiment": "A0 (upstream 口径, 无空间坐标)",
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "label_key": "final_annot",
   "n_spots": 3484,
   "n_genes": 18085,

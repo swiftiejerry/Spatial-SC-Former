@@ -1,5 +1,5 @@
 {
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "n_cells": 3484,
   "cell_size": 30,
   "n_batches": 117,

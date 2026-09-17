@@ -1,5 +1,5 @@
 {
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "n_total": 3484,
   "rare_types": [
     "follicle",

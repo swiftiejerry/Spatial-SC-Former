@@ -1,7 +1,6 @@
 {
   "stage": "P1",
   "status": "complete",
-  "protocol_sha256": "09b64880db81ccdb4d19cf8519d778a09f79998085c920c4123656dd83a7f3c9",
   "runs": [
     {
       "arm": "A0",

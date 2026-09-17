@@ -1,12 +1,16 @@
 {
   "protocol": {
-    "name": "sister_blueprint_strict_input_v1",
-    "line": "sister_blueprint_mainline",
+    "name": "design_strict_input_v1",
+    "line": "design_mainline",
     "status": "preflight_only_not_yet_effect_validation",
     "source": "C:/Users/Administrator/Desktop/scFormer修改思路.docx",
     "dataset": "data/raw/human_lymph_node_A1/adata_RNA.h5ad",
     "label_key": "final_annot",
-    "seeds": [0, 1, 42],
+    "seeds": [
+      0,
+      1,
+      42
+    ],
     "one_primary_factor_per_stage": true
   },
   "input_base": {
@@ -17,13 +21,13 @@
     "spot_node_input": "scanpy_normalize_log_scale",
     "gene_node_input": "paper_z",
     "kl_target": "counts",
-    "kl_target_note": "The sister document specifies X -> Z -> Top-Z but does not specify the KL target; counts is retained here only to avoid silently adding the separate paper-X diagnostic factor.",
+    "kl_target_note": "The design document specifies X -> Z -> Top-Z but does not specify the KL target; counts is retained here only to avoid silently adding the separate paper-X diagnostic factor.",
     "batching_cell_size": 30,
     "batching": "matched spatial_median_bisection_with_one_hop_halo",
     "remaining_conventions": [
       "A/C still use coordinates for matched batching, not for an HGT spatial relation; literal no-coordinate baseline is not yet met.",
       "Spot Z uses scanpy scale sample-standard-deviation; gene Z uses population-standard-deviation. Both standardize per gene, but exact numeric equality is not claimed.",
-      "Empty prototype reseeding is an engineering convention, not specified by the sister document.",
+      "Empty prototype reseeding is an engineering convention, not specified by the design document.",
       "tau=0.005 is only a smoke value and is not calibrated for this input base."
     ]
   },
@@ -35,7 +39,10 @@
   },
   "stage1": {
     "name": "spot_spot_spatial_relation",
-    "arms": ["A", "B"],
+    "arms": [
+      "A",
+      "B"
+    ],
     "only_difference": "spatial_relation",
     "spatial_relation": {
       "A": false,
@@ -53,7 +60,10 @@
     "name": "prototype_dynamic_clustering",
     "arm": "C",
     "spatial_relation": false,
-    "warmup": {"epochs": 30, "loss": "L_KL_only"},
+    "warmup": {
+      "epochs": 30,
+      "loss": "L_KL_only"
+    },
     "initialization": {
       "source": "warmup_embedding_H_spot",
       "leiden": true,
@@ -89,7 +99,10 @@
     "only_new_difference_from_stage2": "spatial_relation",
     "status": "smoke_pending"
   },
-  "stage4": {"name": "A_B_C_D_multiseed_ablation", "status": "not_started"},
+  "stage4": {
+    "name": "A_B_C_D_multiseed_ablation",
+    "status": "not_started"
+  },
   "execution_policy": {
     "first_run": "one_to_two_epoch_smoke_only",
     "no_long_training_until": "strict input smoke passes and protocol report is reviewed",

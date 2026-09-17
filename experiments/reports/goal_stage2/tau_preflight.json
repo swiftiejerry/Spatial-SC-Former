@@ -25,7 +25,7 @@
     {
       "seed": 0,
       "run": "stage2_C_t0.005_d0.8_seed0_formal_tau_preflight_ep30_v1",
-      "formal_run": "stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed0_design_v1",
       "embedding_shape": [
         3484,
         104
@@ -34,7 +34,6 @@
       "leiden_resolution": 0.5,
       "formal_initial_partition_ari": 1.0,
       "formal_initial_partition_exact": true,
-      "embedding_sha256": "39bfe37eaf11ffb9e42444a378dd11983a58e5c67252f0c3161d20a49a14a912",
       "recomputed_vs_saved_initial_partition_ari": 1.0,
       "recomputed_vs_saved_initial_partition_exact": true,
       "geometry": {
@@ -113,7 +112,7 @@
     {
       "seed": 1,
       "run": "stage2_C_t0.005_d0.8_seed1_formal_tau_preflight_ep30_v1",
-      "formal_run": "stage2_C_t0.005_d0.8_seed1_sister_blueprint_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed1_design_v1",
       "embedding_shape": [
         3484,
         104
@@ -122,7 +121,6 @@
       "leiden_resolution": 0.5,
       "formal_initial_partition_ari": 1.0,
       "formal_initial_partition_exact": true,
-      "embedding_sha256": "67689b4ffe83d9be59f37680a2ceed86ba231596744a37661687312d4fdd910e",
       "recomputed_vs_saved_initial_partition_ari": 1.0,
       "recomputed_vs_saved_initial_partition_exact": true,
       "geometry": {
@@ -201,7 +199,7 @@
     {
       "seed": 42,
       "run": "stage2_C_t0.005_d0.8_seed42_formal_tau_preflight_ep30_v1",
-      "formal_run": "stage2_C_t0.005_d0.8_seed42_sister_blueprint_v1",
+      "formal_run": "stage2_C_t0.005_d0.8_seed42_design_v1",
       "embedding_shape": [
         3484,
         104
@@ -210,7 +208,6 @@
       "leiden_resolution": 0.5,
       "formal_initial_partition_ari": 1.0,
       "formal_initial_partition_exact": true,
-      "embedding_sha256": "8c3bc98550fa14f7c406d716c045e04b7500419002aa2d2fad125913a53a24f6",
       "recomputed_vs_saved_initial_partition_ari": 1.0,
       "recomputed_vs_saved_initial_partition_exact": true,
       "geometry": {
@@ -388,6 +385,6 @@
   "recommended": null,
   "preflight_pass": false,
   "complete": true,
-  "scope": "Only the eight listed tau values; other tau and delta values remain untested. The 10%-90% band is a project screening rule, not specified by the sister's document.",
+  "scope": "Only the eight listed tau values; other tau and delta values remain untested. The 10%-90% band is a project screening rule, not specified by the design document.",
   "selection_does_not_use_truth": true
 }

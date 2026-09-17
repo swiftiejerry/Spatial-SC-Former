@@ -1,11 +1,10 @@
 {
-  "run_id": "stage2_C_t0.005_d0.8_seed0_sister_blueprint_v1",
+  "run_id": "stage2_C_t0.005_d0.8_seed0_design_v1",
   "protocol": {
-    "name": "sister_blueprint_mainline_v1",
-    "path": "D:\\Spatial-scFormer\\configs\\师姐蓝图主线_v1.json",
-    "sha256": "c37c5304b0992a21a97a8a299b3e670748a1d91f44b8f77dc1a03ac447cf1f0f",
+    "name": "design_mainline_v1",
+    "path": "configs/mainline_protocol.json",
     "argv": [
-      "D:\\Spatial-scFormer\\scripts\\运行Stage23实验.py",
+      "\\scripts\\运行Stage23实验.py",
       "--arm",
       "C",
       "--seed",
@@ -39,15 +38,15 @@
       "--gene-input",
       "counts",
       "--protocol-file",
-      "configs/师姐蓝图主线_v1.json",
+      "configs/设计文档主线_v1.json",
       "--tag",
-      "sister_blueprint_v1"
+      "design_v1"
     ]
   },
   "stage": "2",
   "arm": "C",
   "experiment": "C (expression + prototype dynamic)",
-  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad": "\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
   "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
   "label_key": "final_annot",
   "n_spots": 3484,

@@ -95,7 +95,7 @@ def 图说明(stage1: dict, stage2: dict, tau: dict) -> dict:
         raise ValueError("F9 的预检范围说明要求八个已登记 tau 候选；请先核对新预检范围")
     tau_text = "、".join(f"{value:g}" for value in grid)
     basis = (
-        "师姐原文以 Top-Z spot-gene 图和 spot/gene 双节点 Z 输入为基底。"
+        "设计原文以 Top-Z spot-gene 图和 spot/gene 双节点 Z 输入为基底。"
         "当前沿用公开代码的随机采样 gene 并集非零边、gene counts 输入与 counts KL 目标，"
         "未满足该基底，因此现行 C 称公开代码基线 C，不称完整严格蓝图复现。"
         "空间坐标还用于 A/C 的分块与 halo，关闭 spot-spot relation 不等于坐标不可见。"
@@ -171,7 +171,7 @@ def main() -> int:
     ax.set_axis_off()
     fig.text(0.03, 0.975, "a   Three layers that must not be conflated",
              weight="bold", fontsize=8, color=ink, va="top")
-    fig.text(0.03, 0.938, "Sister's blueprint: Top-Z graph + Z inputs for BOTH spots and genes",
+    fig.text(0.03, 0.938, "Design blueprint: Top-Z graph + Z inputs for BOTH spots and genes",
              fontsize=6.8, color=red, va="top")
     fig.text(0.03, 0.905, "Public-code baseline: sampled edges + gene counts; A/C still use spatial batching",
              fontsize=6.6, color=ink, va="top")
