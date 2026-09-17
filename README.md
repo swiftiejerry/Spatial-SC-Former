@@ -119,6 +119,8 @@ scripts/
   figures/                        scripts that regenerate the report figures
 configs/                          run configurations and protocol snapshots
 experiments/
+  results.json                    one row per run, merged from the per-run metrics files
+  recompute_churn.py              recomputes the churn numbers quoted in this README and the report
   runs/                           per-run outputs (metrics, initial and final partitions)
   reports/                        aggregate reports the README and the report cite
     goal_stage1/ goal_stage2/     the A/B and C arms
@@ -127,7 +129,7 @@ experiments/
     rare_f1_ceiling/              the 42,525-partition construction proof
     marker_screen/                per-domain Wilcoxon statistics
     advanced_blueprint_P0..P2/    the aligned-basis runs; P2 is the paired comparison that stopped the project
-third_party/scFormer/             upstream snapshot (commit 7401620), imported unmodified
+third_party/scFormer/             upstream snapshot (commit 7401620), with explanatory comments added
 docs/data.md                      how to obtain and place the dataset
 ```
 

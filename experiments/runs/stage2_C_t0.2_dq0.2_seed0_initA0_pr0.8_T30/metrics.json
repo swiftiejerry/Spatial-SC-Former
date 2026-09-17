@@ -1,0 +1,356 @@
+{
+  "run_id": "stage2_C_t0.2_dq0.2_seed0_initA0_pr0.8_T30",
+  "stage": "2",
+  "arm": "C",
+  "experiment": "C (expression + prototype dynamic)",
+  "h5ad": "D:\\Spatial-scFormer\\data\\raw\\human_lymph_node_A1\\adata_RNA.h5ad",
+  "h5ad_sha256": "7cdd2ab1a09d8796f9810aa3c09d6377994e2f17806a9dba6fd263ff84e4db68",
+  "label_key": "final_annot",
+  "n_spots": 3484,
+  "n_genes": 18085,
+  "seed": 0,
+  "deterministic": true,
+  "hyperparams": {
+    "cell_size": 30,
+    "n_hidden": 104,
+    "n_heads": 8,
+    "n_layers": 3,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "labsm": 0.1,
+    "epochs": 90
+  },
+  "dynamic": {
+    "warmup_epochs": 30,
+    "update_interval": 30,
+    "delta": 0.8,
+    "tau": 0.2,
+    "lambda_proto": 1.0,
+    "target_k": 8,
+    "objective": "L_KL + lambda_proto * L_proto (replaces label smoothing and -S_intra)",
+    "cluster_init": {
+      "selection": "a0_pseudo",
+      "resolution": null,
+      "k": 8,
+      "init_source": "a0_pseudo",
+      "n_clusters": 8,
+      "center_embedding": true,
+      "delta_mode": "quantile",
+      "delta_quantile": 0.2,
+      "delta_effective_at_init": 0.23635409772396088,
+      "confident_fraction_at_init": 0.7999425530433655,
+      "geometry_raw": {
+        "top1_similarity_median": 0.9219793081283569,
+        "top1_top2_gap_median": 0.0009987950325012207,
+        "prototype_cosine_median": 0.9983701705932617,
+        "prototype_cosine_max": 0.9997661113739014
+      },
+      "geometry_active": {
+        "top1_similarity_median": 0.2268598973751068,
+        "top1_top2_gap_median": 0.06218762695789337,
+        "prototype_cosine_median": -0.23698550462722778,
+        "prototype_cosine_max": 0.8742676973342896
+      },
+      "confidence_grid": {
+        "0.02": {
+          "0.5": 0.9578071236610413,
+          "0.6": 0.8800229430198669,
+          "0.7": 0.7956371903419495,
+          "0.8": 0.6974741220474243,
+          "0.9": 0.5826635956764221
+        },
+        "0.05": {
+          "0.5": 0.7827209830284119,
+          "0.6": 0.6148105263710022,
+          "0.7": 0.47703787684440613,
+          "0.8": 0.3332376480102539,
+          "0.9": 0.18742823600769043
+        },
+        "0.1": {
+          "0.5": 0.3955223858356476,
+          "0.6": 0.22474166750907898,
+          "0.7": 0.11710677295923233,
+          "0.8": 0.04477611929178238,
+          "0.9": 0.009758897125720978
+        },
+        "0.15": {
+          "0.5": 0.14380022883415222,
+          "0.6": 0.052525829523801804,
+          "0.7": 0.014351319521665573,
+          "0.8": 0.0020091847982257605,
+          "0.9": 0.0002870263997465372
+        },
+        "0.2": {
+          "0.5": 0.03673937916755676,
+          "0.6": 0.004879448562860489,
+          "0.7": 0.0002870263997465372,
+          "0.8": 0.0002870263997465372,
+          "0.9": 0.0
+        },
+        "0.3": {
+          "0.5": 0.0002870263997465372,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        }
+      }
+    },
+    "n_clusters_used": 8,
+    "confidence_mean": 0.8933247923851013,
+    "confident_fraction": 0.7999425947187141,
+    "confidence_percentiles": {
+      "p10": 0.8303475379943848,
+      "p50": 0.930984377861023,
+      "p90": 0.9527492523193359
+    },
+    "center_embedding": true,
+    "delta_mode": "quantile",
+    "delta_quantile": 0.2,
+    "init_source": "a0_pseudo",
+    "pseudo_resolution": 0.8,
+    "pseudo_resolution_source": "cli --pseudo-resolution",
+    "delta_effective_final": 0.8591188788414001,
+    "preserve_k": true,
+    "refresh_trace": [
+      {
+        "changed_fraction": 0.3760045924225029,
+        "delta_effective": 0.6510542631149292,
+        "confident_fraction": 0.7999425530433655,
+        "confidence_mean": 0.8248760104179382,
+        "confidence_p10": 0.5538318753242493,
+        "confidence_p50": 0.9070079326629639,
+        "confidence_p90": 0.955871045589447,
+        "n_nonempty_before_reseed": 8,
+        "n_nonempty": 8,
+        "n_reseeded": 0,
+        "top1_similarity_median": 0.8696841597557068,
+        "top1_top2_gap_median": 0.5743024349212646,
+        "prototype_cosine_median": -0.21632324159145355,
+        "prototype_cosine_max": 0.47264668345451355,
+        "cluster_sizes": [
+          6,
+          671,
+          516,
+          415,
+          75,
+          253,
+          246,
+          1302
+        ],
+        "reseeded": []
+      },
+      {
+        "changed_fraction": 0.02497129735935706,
+        "delta_effective": 0.8591188788414001,
+        "confident_fraction": 0.7999425530433655,
+        "confidence_mean": 0.8928183317184448,
+        "confidence_p10": 0.8285315036773682,
+        "confidence_p50": 0.9302164912223816,
+        "confidence_p90": 0.9530924558639526,
+        "n_nonempty_before_reseed": 8,
+        "n_nonempty": 8,
+        "n_reseeded": 0,
+        "top1_similarity_median": 0.9232199788093567,
+        "top1_top2_gap_median": 0.7219588160514832,
+        "prototype_cosine_median": -0.133846715092659,
+        "prototype_cosine_max": 0.46340084075927734,
+        "cluster_sizes": [
+          7,
+          655,
+          520,
+          426,
+          64,
+          257,
+          246,
+          1309
+        ],
+        "reseeded": []
+      }
+    ]
+  },
+  "batching": {
+    "sampler": "spatial_median_bisection_with_one_hop_halo",
+    "n_batches": 117
+  },
+  "spatial": {
+    "relation_enabled": false,
+    "num_relations": 2,
+    "mode": "knn",
+    "k": 10,
+    "weighted": false,
+    "n_directed_edges": 38624,
+    "core_incident_retention": 1.0,
+    "total_spatial_edges_in_batches": 0,
+    "min_per_batch": 0,
+    "max_per_batch": 0
+  },
+  "scformer": {
+    "ari": 0.2282369726441467,
+    "nmi": 0.34274959575147945,
+    "n_clusters": 8,
+    "ari_vs_pseudo": 0.6675221273765513,
+    "rare_f1": 0.05583756345177665,
+    "rare_precision": 0.09649122807017543,
+    "rare_recall": 0.039285714285714285,
+    "n_true_rare": 280,
+    "n_pred_rare": 114,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 2
+  },
+  "rare_per_type": {
+    "follicle": {
+      "n_cells": 96,
+      "n_in_rare_cluster": 11,
+      "recall": 0.11458333333333333
+    },
+    "medulla vessels": {
+      "n_cells": 80,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "subcapsular sinus": {
+      "n_cells": 73,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "hilum": {
+      "n_cells": 23,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    },
+    "trabeculae": {
+      "n_cells": 8,
+      "n_in_rare_cluster": 0,
+      "recall": 0.0
+    }
+  },
+  "leiden_baseline": {
+    "ari": 0.286688799821834,
+    "nmi": 0.40679120453609424,
+    "n_clusters": 8,
+    "resolution": 0.8,
+    "rare_f1": 0.39267015706806285,
+    "rare_precision": 0.7352941176470589,
+    "rare_recall": 0.26785714285714285,
+    "n_true_rare": 280,
+    "n_pred_rare": 102,
+    "rare_types": [
+      "follicle",
+      "medulla vessels",
+      "subcapsular sinus",
+      "hilum",
+      "trabeculae"
+    ],
+    "n_rare_clusters": 1
+  },
+  "truth_distribution": {
+    "medulla cords": 1166,
+    "medulla sinuses": 794,
+    "cortex": 722,
+    "pericapsular adipose tissue": 320,
+    "capsule": 202,
+    "follicle": 96,
+    "medulla vessels": 80,
+    "subcapsular sinus": 73,
+    "hilum": 23,
+    "trabeculae": 8
+  },
+  "history_tail": [
+    {
+      "epoch": 84,
+      "stage": 2.0,
+      "loss": 0.11173044364803876,
+      "reconstruction_loss": 0.016130579953901786,
+      "proto_loss": 0.09559986335981606,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.8890542189280192
+    },
+    {
+      "epoch": 85,
+      "stage": 2.0,
+      "loss": 0.09431535072433643,
+      "reconstruction_loss": 0.016186463025708992,
+      "proto_loss": 0.07812888773842755,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.895463230772915
+    },
+    {
+      "epoch": 86,
+      "stage": 2.0,
+      "loss": 0.09980058504475488,
+      "reconstruction_loss": 0.016144313531107884,
+      "proto_loss": 0.08365627187184799,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.8992225675501375
+    },
+    {
+      "epoch": 87,
+      "stage": 2.0,
+      "loss": 0.10013297875212808,
+      "reconstruction_loss": 0.016049287035169765,
+      "proto_loss": 0.08408369171695831,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.8975850578047272
+    },
+    {
+      "epoch": 88,
+      "stage": 2.0,
+      "loss": 0.10718215272849442,
+      "reconstruction_loss": 0.015954531028739408,
+      "proto_loss": 0.09122762160423474,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.8983734963286636
+    },
+    {
+      "epoch": 89,
+      "stage": 2.0,
+      "loss": 0.0962305865290328,
+      "reconstruction_loss": 0.01593098609557009,
+      "proto_loss": 0.08029960025834222,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.8974488922673413
+    },
+    {
+      "epoch": 90,
+      "stage": 2.0,
+      "loss": 0.09412615131745991,
+      "reconstruction_loss": 0.016000051345899064,
+      "proto_loss": 0.07812609991584069,
+      "confident_spots": 23.77777777777778,
+      "delta_batch_mean": 0.9031106569828131
+    },
+    {
+      "epoch": 90.5,
+      "event": 3.0,
+      "changed_fraction": 0.02497129735935706,
+      "delta_effective": 0.8591188788414001,
+      "confident_fraction": 0.7999425530433655,
+      "confidence_mean": 0.8928183317184448,
+      "confidence_p10": 0.8285315036773682,
+      "confidence_p50": 0.9302164912223816,
+      "confidence_p90": 0.9530924558639526,
+      "n_nonempty_before_reseed": 8,
+      "n_nonempty": 8,
+      "n_reseeded": 0,
+      "top1_similarity_median": 0.9232199788093567,
+      "top1_top2_gap_median": 0.7219588160514832,
+      "prototype_cosine_median": -0.133846715092659,
+      "prototype_cosine_max": 0.46340084075927734
+    }
+  ],
+  "runtime_sec": 1499.0,
+  "train_sec": 1467.5,
+  "peak_gpu_mem_gb": 2.099,
+  "env": {
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}

@@ -97,5 +97,6 @@
       "second_choice": "MGP",
       "tier": 3
     }
-  ]
+  ],
+  "spatial_specificity_note": "Passing the three statistical criteria is not the same as localizing the domain. Follicle's CXCL13 is spatially specific: the top-expressing spots fall inside the domain (45 of the top 96, against a 2.76% domain share, i.e. 17x random). Hilum's COL1A2 passes the criteria but is not spatially specific: collagen is high across the entire capsule, so only 2 of the top 23 expressing spots fall inside hilum. The report therefore treats only follicle as having an unambiguous marker. trabeculae has pts_in = 1.0 on 8 spots, which is meaningless at that size and fails multiple-testing correction (adjusted p = 1.0)."
 }

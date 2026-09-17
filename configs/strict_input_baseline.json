@@ -3,7 +3,6 @@
     "name": "design_strict_input_v1",
     "line": "design_mainline",
     "status": "preflight_only_not_yet_effect_validation",
-    "source": "C:/Users/Administrator/Desktop/scFormer修改思路.docx",
     "dataset": "data/raw/human_lymph_node_A1/adata_RNA.h5ad",
     "label_key": "final_annot",
     "seeds": [
